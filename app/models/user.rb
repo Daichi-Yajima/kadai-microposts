@@ -6,7 +6,5 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
-  def feed_microposts
-    Microposts.wehre(user_id: self.following_ids + [self.id])
-  end
+  has_many :microposts
 end
