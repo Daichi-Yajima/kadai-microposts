@@ -7,6 +7,12 @@
         </div>
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
       <% end %>
+      <ul>
+        <li><%= link_to 'プロフィール', user_path(current_user) %></li>
+        <li><%= link_to 'フォロー', followings_user_path(current_user) %></li>
+        <li><%= link_to 'フォロワー', followers_user_path(current_user) %></li>
+        <li><%= link_to 'お気に入り', favorites_user_path(current_user) %></li>
+      </ul>
     </aside>
     <div class="col-xs-8">
       <%= render 'microposts/microposts', microposts: @microposts %>
